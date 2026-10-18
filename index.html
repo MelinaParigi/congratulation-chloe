@@ -44,7 +44,17 @@ function victory(){try{audio??=new(window.AudioContext||window.webkitAudioContex
 function party(){victory();fireworks(17);for(let i=0;i<55;i++)setTimeout(vulva,i*65)}
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-async function launch(){if(started)return;started=true;document.querySelector('#start').disabled=true;try{audio??=new(window.AudioContext||window.webkitAudioContext)();await audio.resume()}catch(e){}document.querySelector('#intro').classList.add('hidden');const overlay=document.querySelector('#countdown');overlay.classList.remove('hidden');for(const n of ['3','2','1','BOOOOM !']){const span=overlay.querySelector('span');span.textContent=n;span.style.animation='none';void span.offsetWidth;span.style.animation='pop .5s ease-in-out';if(n!=='BOOOOM !')playNote(440, audio?.currentTime||0,.12);await wait(n==='BOOOOM !'?500:850)}overlay.classList.add('hidden');document.querySelector('#final').classList.remove('hidden');if(!reduced)party();else victory()}
+async function launch(){if(started)return;started=true;document.querySelector('#start').disabled=true;try {
+  const AudioContextClass =
+    window.AudioContext || window.webkitAudioContext;
+
+  if (AudioContextClass) {
+    audio ??= new AudioContextClass();
+    audio.resume().catch(() => {});
+  }
+} catch (e) {
+  console.warn('Audio indisponible :', e);
+}document.querySelector('#intro').classList.add('hidden');const overlay=document.querySelector('#countdown');overlay.classList.remove('hidden');for(const n of ['3','2','1','BOOOOM !']){const span=overlay.querySelector('span');span.textContent=n;span.style.animation='none';void span.offsetWidth;span.style.animation='pop .5s ease-in-out';if(n!=='BOOOOM !')playNote(440, audio?.currentTime||0,.12);await wait(n==='BOOOOM !'?500:850)}overlay.classList.add('hidden');document.querySelector('#final').classList.remove('hidden');if(!reduced)party();else victory()}
 document.querySelector('#start').addEventListener('click',launch);document.querySelector('#again').addEventListener('click',party);document.addEventListener('pointerdown',e=>{if(started&&!e.target.closest('button')&&!reduced)burst(e.clientX,e.clientY,55)});if(!reduced)setInterval(()=>{if(started){vulva();if(Math.random()>.55)burst(innerWidth*Math.random(),innerHeight*.55*Math.random(),65)}},750);
 </script>
 </body>
