@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRAVO CHLOÉ ! 🎉</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: radial-gradient(ellipse at top,
+    #752c91 0%, #300d46 48%, #12091e 100%);
+  font-family: 'Trebuchet MS', sans-serif;
+  color: white;
+  text-align: center;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#decor { z-index: 1; }
+#fireworks { z-index: 3; }
+main {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 20px;
+}
+.tag {
+  letter-spacing: 4px;
+  color: #ffc9e5;
+  font-size: 13px;
+  font-weight: bold;
+}
+h1 {
+  font-size: clamp(55px, 11vw, 125px);
+  line-height: .95;
+  margin: 25px 0;
+  background: linear-gradient(135deg,
+    #fff, #ff91d5, #ffd66b, #fff);
+  background-size: 300%;
+  color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite,
+             bounce 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px #f84dba77);
+}
+@keyframes shimmer {
+  to { background-position: 300%; }
+}
+@keyframes bounce {
+  50% { transform: scale(1.045) rotate(-1deg); }
+}
+.subtitle {
+  max-width: 650px;
+  font-size: clamp(19px, 3vw, 26px);
+  line-height: 1.6;
+}
+.highlight { color: #ffca67; font-weight: bold; }
+.vulva-hero {
+  width: 155px;
+  height: 180px;
+  margin: 10px auto;
+  filter: drop-shadow(0 0 28px #ff83c3);
+  animation: dance 1.8s ease-in-out infinite;
+}
+@keyframes dance {
+  0%,100% { transform: rotate(-12deg) scale(1); }
+  50% { transform: rotate(12deg) scale(1.12); }
+}
+button {
+  border: 0;
+  border-radius: 100px;
+  padding: 20px 32px;
+  margin-top: 28px;
+  font-size: clamp(15px, 3vw, 20px);
+  font-weight: 900;
+  color: #481344;
+  background: linear-gradient(120deg,#ffdb78,#ff86c7);
+  box-shadow: 0 8px 35px #ff6cc477;
+  cursor: pointer;
+  transition: transform .2s;
+}
+button:hover { transform: scale(1.08); }
+button:active { transform: scale(.95); }
+.footer {
+  margin-top: 45px;
+  font-size: 14px;
+  color: #e9c9f2;
+}
+#floating {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.float {
+  position: absolute;
+  bottom: -150px;
+  animation: floatUp linear forwards;
+}
+@keyframes floatUp {
+  from { transform: translateY(0) rotate(0); opacity: 0; }
+  10% { opacity: .85; }
+  85% { opacity: .85; }
+  to { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  h1, .vulva-hero { animation: none; }
+}
+</style>
+</head>
+<body>
+<canvas id="decor"></canvas>
+<div id="floating"></div>
+<canvas id="fireworks"></canvas>
+
+<main>
+  <div class="tag">✨ UNE STAR EST NÉE ✨</div>
+  <svg class="vulva-hero" viewBox="0 0 160 190"
+       xmlns="http://www.w3.org/2000/svg"
+       aria-label="Illustration stylisée d'une vulve">
+    <path d="M80 8 C20 8 5 75 25 130 Q45 182 80 185
+             Q115 182 135 130 C155 75 140 8 80 8Z"
+          fill="#ffb1ce" stroke="#ffdfed" stroke-width="5"/>
+    <path d="M80 32 C45 37 37 94 55 143
+             Q67 167 80 169 Q93 167 105 143
+             C123 94 115 37 80 32Z"
+          fill="#f47aa8"/>
+    <path d="M80 55 C60 74 61 117 80 148
+             C99 117 100 74 80 55Z"
+          fill="#a8397c"/>
+    <ellipse cx="80" cy="57" rx="10" ry="8"
+             fill="#ffcee4"/>
+    <circle cx="46" cy="72" r="4" fill="#fff4fa"/>
+    <circle cx="114" cy="72" r="4" fill="#fff4fa"/>
+    <path d="M58 103 Q80 115 102 103"
+          fill="none" stroke="#ffd5e7"
+          stroke-width="3" stroke-linecap="round"/>
+  </svg>
+
+  <h1>BRAVO<br>CHLOÉ !</h1>
+  <p class="subtitle">
+    Après des mois de travail, de galères,
+    de bugs et de persévérance...
+    <br><br>
+    <span class="highlight">LES MUSES EST EN LIGNE !!!</span>
+    <br><br>
+    Le périnée n'a qu'à bien se tenir :
+    sa nouvelle reine est arrivée ! 👑🌸
+  </p>
+  <button id="party">
+    🎆 FAIS PÉTER LES VULVES ! 🎆
+  </button>
+  <div class="footer">
+    Avec plein d'amour, de fierté et de périnées heureux 💗
+  </div>
+</main>
+
+<script>
+const svg = `<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 100 120">
+<path d="M50 5 C10 5 5 60 18 88 Q30 115 50 115
+Q70 115 82 88 C95 60 90 5 50 5Z"
+fill="#ffb2d1" stroke="#ffe2ed" stroke-width="4"/>
+<path d="M50 22 C29 30 28 75 50 102
+C72 75 71 30 50 22Z" fill="#e768a1"/>
+<path d="M50 40 C39 52 39 76 50 90
+C61 76 61 52 50 40Z" fill="#9b3877"/>
+<circle cx="50" cy="39" r="6" fill="#ffd8e8"/>
+</svg>`;
+
+const floating = document.getElementById('floating');
+const vulvaURL = 'data:image/svg+xml;charset=utf-8,' +
+  encodeURIComponent(svg);
+
+function floatVulva() {
+  const img = document.createElement('img');
+  img.src = vulvaURL;
+  img.alt = '';
+  img.className = 'float';
+  const size = 35 + Math.random() * 65;
+  img.style.width = size + 'px';
+  img.style.left = Math.random() * 95 + '%';
+  img.style.animationDuration = (7 + Math.random() * 8) + 's';
+  floating.appendChild(img);
+  img.addEventListener('animationend', () => img.remove());
+}
+
+const canvas = document.getElementById('fireworks');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resize() {
+  const ratio = Math.min(devicePixelRatio || 1, 2);
+  canvas.width = innerWidth * ratio;
+  canvas.height = innerHeight * ratio;
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+}
+window.addEventListener('resize', resize);
+resize();
+
+const colors = [
+  '#ff76c6','#ffdc76','#ffffff',
+  '#b48aff','#ff668a','#79e9ed'
+];
+
+function burst(x, y, count = 100) {
+  for(let i = 0; i < count; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 2 + Math.random() * 7;
+    particles.push({
+      x, y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      life: 1,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      size: 2 + Math.random()*4
+    });
+  }
+}
+
+function animate() {
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  particles = particles.filter(p => p.life > 0);
+  for(const p of particles) {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += .065;
+    p.vx *= .99;
+    p.life -= .012;
+    ctx.globalAlpha = Math.max(0,p.life);
+    ctx.fillStyle = p.color;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animate);
+}
+animate();
+
+function celebration() {
+  for(let i=0;i<7;i++) {
+    setTimeout(() => {
+      burst(
+        Math.random()*innerWidth,
+        Math.random()*innerHeight*.7,
+        110
+      );
+    }, i*220);
+  }
+  for(let i=0;i<35;i++) {
+    setTimeout(floatVulva, i*75);
+  }
+}
+
+document.getElementById('party')
+  .addEventListener('click', celebration);
+
+document.addEventListener('click', e => {
+  if(e.target.closest('button')) return;
+  burst(e.clientX,e.clientY,45);
+});
+
+const reducedMotion =
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if(!reducedMotion) {
+  setInterval(floatVulva, 650);
+  setInterval(() => {
+    burst(
+      Math.random()*innerWidth,
+      Math.random()*innerHeight*.65,
+      80
+    );
+  }, 1700);
+  setTimeout(celebration, 500);
+}
+</script>
+</body>
+</html>
