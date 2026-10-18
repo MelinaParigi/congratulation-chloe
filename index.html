@@ -1,293 +1,51 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BRAVO CHLOÉ ! 🎉</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#270b3e">
+<title>Chloé, tu l'as fait !!! 💖</title>
 <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background: radial-gradient(ellipse at top,
-    #752c91 0%, #300d46 48%, #12091e 100%);
-  font-family: 'Trebuchet MS', sans-serif;
-  color: white;
-  text-align: center;
-}
-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-#decor { z-index: 1; }
-#fireworks { z-index: 3; }
-main {
-  position: relative;
-  z-index: 2;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 65px 20px;
-}
-.tag {
-  letter-spacing: 4px;
-  color: #ffc9e5;
-  font-size: 13px;
-  font-weight: bold;
-}
-h1 {
-  font-size: clamp(55px, 11vw, 125px);
-  line-height: .95;
-  margin: 25px 0;
-  background: linear-gradient(135deg,
-    #fff, #ff91d5, #ffd66b, #fff);
-  background-size: 300%;
-  color: transparent;
-  background-clip: text;
-  animation: shimmer 4s linear infinite,
-             bounce 2.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 25px #f84dba77);
-}
-@keyframes shimmer {
-  to { background-position: 300%; }
-}
-@keyframes bounce {
-  50% { transform: scale(1.045) rotate(-1deg); }
-}
-.subtitle {
-  max-width: 650px;
-  font-size: clamp(19px, 3vw, 26px);
-  line-height: 1.6;
-}
-.highlight { color: #ffca67; font-weight: bold; }
-.vulva-hero {
-  width: 155px;
-  height: 180px;
-  margin: 10px auto;
-  filter: drop-shadow(0 0 28px #ff83c3);
-  animation: dance 1.8s ease-in-out infinite;
-}
-@keyframes dance {
-  0%,100% { transform: rotate(-12deg) scale(1); }
-  50% { transform: rotate(12deg) scale(1.12); }
-}
-button {
-  border: 0;
-  border-radius: 100px;
-  padding: 20px 32px;
-  margin-top: 28px;
-  font-size: clamp(15px, 3vw, 20px);
-  font-weight: 900;
-  color: #481344;
-  background: linear-gradient(120deg,#ffdb78,#ff86c7);
-  box-shadow: 0 8px 35px #ff6cc477;
-  cursor: pointer;
-  transition: transform .2s;
-}
-button:hover { transform: scale(1.08); }
-button:active { transform: scale(.95); }
-.footer {
-  margin-top: 45px;
-  font-size: 14px;
-  color: #e9c9f2;
-}
-#floating {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-  pointer-events: none;
-}
-.float {
-  position: absolute;
-  bottom: -150px;
-  animation: floatUp linear forwards;
-}
-@keyframes floatUp {
-  from { transform: translateY(0) rotate(0); opacity: 0; }
-  10% { opacity: .85; }
-  85% { opacity: .85; }
-  to { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  h1, .vulva-hero { animation: none; }
-}
+:root{--pink:#ff75bf;--gold:#ffdf83;--purple:#38115d}*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:#fff}body{overflow-x:hidden;background:radial-gradient(ellipse at 50% 10%,#842b8b 0%,#35104d 45%,#12091f 100%)}body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 20% 25%,#ff6eb229,transparent 32%),radial-gradient(circle at 85% 80%,#ad70ff30,transparent 30%);pointer-events:none}canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}#floaties{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:2}.floatie{position:absolute;bottom:-130px;opacity:.8;animation:rise var(--duration) linear forwards;filter:drop-shadow(0 0 10px #ff93c58c)}@keyframes rise{0%{transform:translate(0,0) rotate(0);opacity:0}10%{opacity:.9}85%{opacity:.9}100%{transform:translate(var(--drift),-125vh) rotate(var(--rotate));opacity:0}}main{position:relative;z-index:3;min-height:100svh;display:grid;place-items:center;padding:45px 18px}.panel{max-width:780px;width:100%;text-align:center;padding:38px 20px;border:1px solid #ffffff30;border-radius:34px;background:#ffffff0d;box-shadow:0 20px 90px #10001c70;backdrop-filter:blur(7px)}.eyebrow{font-weight:800;letter-spacing:.23em;font-size:12px;color:#ffe5a5;text-transform:uppercase}.hero-icon{width:120px;height:145px;display:block;margin:15px auto;animation:wiggle 2s ease-in-out infinite;filter:drop-shadow(0 0 18px #ff85cb)}@keyframes wiggle{50%{transform:rotate(12deg) scale(1.12)}0%,100%{transform:rotate(-8deg)}}h1{font-size:clamp(48px,9vw,95px);line-height:1.02;margin:16px 0 20px;letter-spacing:-.055em;background:linear-gradient(110deg,#fff,#ff92c9,#ffdb7a,#fff);background-size:300% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:shine 4s linear infinite}@keyframes shine{to{background-position:300% center}}p{font-size:clamp(17px,2.6vw,22px);line-height:1.55;max-width:590px;margin:12px auto}.gold{color:var(--gold);font-weight:850}.button{appearance:none;border:0;cursor:pointer;border-radius:999px;padding:19px 28px;background:linear-gradient(120deg,#ffe28a,#ff7bc2);color:#48133f;font-size:clamp(16px,2.8vw,21px);font-weight:900;box-shadow:0 8px 35px #ff6cc477;transition:transform .2s,box-shadow .2s;margin-top:24px}.button:hover{transform:scale(1.05);box-shadow:0 8px 45px #ff6cc4aa}.button:active{transform:scale(.96)}.small{font-size:13px;opacity:.75;margin-top:22px}.hidden{display:none!important}#countdown{position:fixed;inset:0;display:grid;place-items:center;z-index:20;background:#190828dd;font-size:clamp(130px,32vw,310px);font-weight:1000;text-shadow:0 0 65px #ff66bb;animation:pop .5s ease-in-out}#countdown span{animation:pop .5s ease-in-out}@keyframes pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}#final h1{font-size:clamp(43px,8vw,85px)}.heart{font-size:32px;animation:beat 1s infinite}@keyframes beat{50%{transform:scale(1.25)}}.note{margin:28px auto 0;padding:20px;max-width:590px;border-radius:22px;background:#ffffff12;border:1px solid #ffffff26}.note p{font-size:17px}.credit{font-size:13px;opacity:.72;margin-top:26px}@media(max-width:500px){.panel{padding:30px 16px;border-radius:25px}.hero-icon{width:95px;height:115px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<canvas id="decor"></canvas>
-<div id="floating"></div>
-<canvas id="fireworks"></canvas>
-
+<canvas id="fx"></canvas><div id="floaties" aria-hidden="true"></div>
 <main>
-  <div class="tag">✨ UNE STAR EST NÉE ✨</div>
-  <svg class="vulva-hero" viewBox="0 0 160 190"
-       xmlns="http://www.w3.org/2000/svg"
-       aria-label="Illustration stylisée d'une vulve">
-    <path d="M80 8 C20 8 5 75 25 130 Q45 182 80 185
-             Q115 182 135 130 C155 75 140 8 80 8Z"
-          fill="#ffb1ce" stroke="#ffdfed" stroke-width="5"/>
-    <path d="M80 32 C45 37 37 94 55 143
-             Q67 167 80 169 Q93 167 105 143
-             C123 94 115 37 80 32Z"
-          fill="#f47aa8"/>
-    <path d="M80 55 C60 74 61 117 80 148
-             C99 117 100 74 80 55Z"
-          fill="#a8397c"/>
-    <ellipse cx="80" cy="57" rx="10" ry="8"
-             fill="#ffcee4"/>
-    <circle cx="46" cy="72" r="4" fill="#fff4fa"/>
-    <circle cx="114" cy="72" r="4" fill="#fff4fa"/>
-    <path d="M58 103 Q80 115 102 103"
-          fill="none" stroke="#ffd5e7"
-          stroke-width="3" stroke-linecap="round"/>
-  </svg>
-
-  <h1>BRAVO<br>CHLOÉ !</h1>
-  <p class="subtitle">
-    Après des mois de travail, de galères,
-    de bugs et de persévérance...
-    <br><br>
-    <span class="highlight">LES MUSES EST EN LIGNE !!!</span>
-    <br><br>
-    Le périnée n'a qu'à bien se tenir :
-    sa nouvelle reine est arrivée ! 👑🌸
-  </p>
-  <button id="party">
-    🎆 FAIS PÉTER LES VULVES ! 🎆
-  </button>
-  <div class="footer">
-    Avec plein d'amour, de fierté et de périnées heureux 💗
-  </div>
+<section class="panel" id="intro">
+<svg class="hero-icon" viewBox="0 0 100 120" role="img" aria-label="Vulve stylisée souriante"><path d="M50 5C10 5 5 60 18 88Q30 115 50 115Q70 115 82 88C95 60 90 5 50 5Z" fill="#ffb2d1" stroke="#ffe2ed" stroke-width="4"/><path d="M50 22C29 30 28 75 50 102C72 75 71 30 50 22Z" fill="#e768a1"/><path d="M50 40C39 52 39 76 50 90C61 76 61 52 50 40Z" fill="#9b3877"/><circle cx="50" cy="39" r="6" fill="#ffd8e8"/><path d="M34 49q4 -4 8 0M58 49q4 -4 8 0" stroke="#7c2a67" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+<h1>CHLOÉ...<br>J'AI UN TRUC À TE DIRE 👀</h1>
+<p>Après des heures de boulot, des bugs, du stress et beaucoup d'amour… il est temps de célébrer une <span class="gold">ÉNORME VICTOIRE</span>.</p>
+<button class="button" id="start">💖 CHLOÉ, CLIQUE ICI 💖</button>
+<div class="small">🔊 Monte le son pour profiter de la surprise !</div>
+</section>
+<section class="panel hidden" id="final" aria-live="polite">
+<div class="eyebrow">🎆 Breaking news : une reine est née 🎆</div>
+<div class="heart" aria-hidden="true">👑 🌸 💖 🌸 👑</div>
+<h1>CHLOÉ, TU L'AS FAIT BORDEL !!!</h1>
+<p class="gold">LES MUSES EST OFFICIELLEMENT EN LIGNE !!! 🚀</p>
+<p>L'application a été mise en ligne par une bosse (on ne dira pas qui) 🥳</p>
+<div class="note"><p>Plus sérieusement… <strong>BRAVO.</strong> 💗</p><p>On a mis du temps mais ça valait le coup (ou pas).</p><p>T'as eu une bonne idée p'tite tête (comme quoi ça ne sait pas trouver une place de cinéma dans des messages mais ça peut avoir de bonnes idées) <strong>Les Muses</strong> ! ✨</p></div>
+<button class="button" id="again">🎆 FAIS PÉTER LES VULVES ! 🎆</button>
+<div class="credit">Avec beaucoup d'amoour 💕</div>
+</section>
 </main>
-
+<div id="countdown" class="hidden" aria-live="assertive"><span>3</span></div>
 <script>
-const svg = `<svg xmlns="http://www.w3.org/2000/svg"
-viewBox="0 0 100 120">
-<path d="M50 5 C10 5 5 60 18 88 Q30 115 50 115
-Q70 115 82 88 C95 60 90 5 50 5Z"
-fill="#ffb2d1" stroke="#ffe2ed" stroke-width="4"/>
-<path d="M50 22 C29 30 28 75 50 102
-C72 75 71 30 50 22Z" fill="#e768a1"/>
-<path d="M50 40 C39 52 39 76 50 90
-C61 76 61 52 50 40Z" fill="#9b3877"/>
-<circle cx="50" cy="39" r="6" fill="#ffd8e8"/>
-</svg>`;
-
-const floating = document.getElementById('floating');
-const vulvaURL = 'data:image/svg+xml;charset=utf-8,' +
-  encodeURIComponent(svg);
-
-function floatVulva() {
-  const img = document.createElement('img');
-  img.src = vulvaURL;
-  img.alt = '';
-  img.className = 'float';
-  const size = 35 + Math.random() * 65;
-  img.style.width = size + 'px';
-  img.style.left = Math.random() * 95 + '%';
-  img.style.animationDuration = (7 + Math.random() * 8) + 's';
-  floating.appendChild(img);
-  img.addEventListener('animationend', () => img.remove());
-}
-
-const canvas = document.getElementById('fireworks');
-const ctx = canvas.getContext('2d');
-let particles = [];
-
-function resize() {
-  const ratio = Math.min(devicePixelRatio || 1, 2);
-  canvas.width = innerWidth * ratio;
-  canvas.height = innerHeight * ratio;
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-}
-window.addEventListener('resize', resize);
-resize();
-
-const colors = [
-  '#ff76c6','#ffdc76','#ffffff',
-  '#b48aff','#ff668a','#79e9ed'
-];
-
-function burst(x, y, count = 100) {
-  for(let i = 0; i < count; i++) {
-    const angle = Math.random() * Math.PI * 2;
-    const speed = 2 + Math.random() * 7;
-    particles.push({
-      x, y,
-      vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed,
-      life: 1,
-      color: colors[Math.floor(Math.random()*colors.length)],
-      size: 2 + Math.random()*4
-    });
-  }
-}
-
-function animate() {
-  ctx.clearRect(0,0,innerWidth,innerHeight);
-  particles = particles.filter(p => p.life > 0);
-  for(const p of particles) {
-    p.x += p.vx;
-    p.y += p.vy;
-    p.vy += .065;
-    p.vx *= .99;
-    p.life -= .012;
-    ctx.globalAlpha = Math.max(0,p.life);
-    ctx.fillStyle = p.color;
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-    ctx.fill();
-  }
-  ctx.globalAlpha = 1;
-  requestAnimationFrame(animate);
-}
-animate();
-
-function celebration() {
-  for(let i=0;i<7;i++) {
-    setTimeout(() => {
-      burst(
-        Math.random()*innerWidth,
-        Math.random()*innerHeight*.7,
-        110
-      );
-    }, i*220);
-  }
-  for(let i=0;i<35;i++) {
-    setTimeout(floatVulva, i*75);
-  }
-}
-
-document.getElementById('party')
-  .addEventListener('click', celebration);
-
-document.addEventListener('click', e => {
-  if(e.target.closest('button')) return;
-  burst(e.clientX,e.clientY,45);
-});
-
-const reducedMotion =
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if(!reducedMotion) {
-  setInterval(floatVulva, 650);
-  setInterval(() => {
-    burst(
-      Math.random()*innerWidth,
-      Math.random()*innerHeight*.65,
-      80
-    );
-  }, 1700);
-  setTimeout(celebration, 500);
-}
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120"><path d="M50 5C10 5 5 60 18 88Q30 115 50 115Q70 115 82 88C95 60 90 5 50 5Z" fill="#ffb2d1" stroke="#ffe2ed" stroke-width="4"/><path d="M50 22C29 30 28 75 50 102C72 75 71 30 50 22Z" fill="#e768a1"/><path d="M50 40C39 52 39 76 50 90C61 76 61 52 50 40Z" fill="#9b3877"/><circle cx="50" cy="39" r="6" fill="#ffd8e8"/></svg>`;
+const vulvaSrc='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+const canvas=document.querySelector('#fx'),ctx=canvas.getContext('2d'),floaties=document.querySelector('#floaties');let particles=[],audio=null,started=false;
+const colors=['#ff76c6','#ffdc76','#fff','#b48aff','#ff668a','#79e9ed','#a8ffca'];
+function resize(){const d=Math.min(devicePixelRatio||1,2);canvas.width=innerWidth*d;canvas.height=innerHeight*d;ctx.setTransform(d,0,0,d,0,0)}addEventListener('resize',resize);resize();
+function burst(x,y,n=100){for(let i=0;i<n;i++){let a=Math.random()*Math.PI*2,s=2+Math.random()*7;particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:1,size:2+Math.random()*4,color:colors[Math.floor(Math.random()*colors.length)],shape:Math.random()>.45?'rect':'circle',rot:Math.random()*6})}if(particles.length>2200)particles.splice(0,particles.length-2200)}
+function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);particles=particles.filter(p=>p.life>0);for(const p of particles){p.x+=p.vx;p.y+=p.vy;p.vy+=.07;p.vx*=.992;p.life-=.011;ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.color;if(p.shape==='rect'){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot+=.04);ctx.fillRect(-p.size,-p.size/2,p.size*2,p.size);ctx.restore()}else{ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill()}}ctx.globalAlpha=1;requestAnimationFrame(draw)}draw();
+function vulva(){const el=document.createElement('img');el.src=vulvaSrc;el.alt='';el.className='floatie';el.style.width=(30+Math.random()*70)+'px';el.style.left=(Math.random()*95)+'%';el.style.setProperty('--duration',(6+Math.random()*8)+'s');el.style.setProperty('--drift',((Math.random()-.5)*240)+'px');el.style.setProperty('--rotate',(Math.random()*900-450)+'deg');floaties.append(el);el.addEventListener('animationend',()=>el.remove());setTimeout(()=>el.remove(),15000)}
+function fireworks(n=9){for(let i=0;i<n;i++)setTimeout(()=>burst(innerWidth*(.1+.8*Math.random()),innerHeight*(.12+.6*Math.random()),100),i*190)}
+function playNote(freq,when,duration=.18,type='triangle',volume=.12){if(!audio)return;const osc=audio.createOscillator(),gain=audio.createGain();osc.type=type;osc.frequency.setValueAtTime(freq,when);gain.gain.setValueAtTime(.0001,when);gain.gain.exponentialRampToValueAtTime(volume,when+.015);gain.gain.exponentialRampToValueAtTime(.0001,when+duration);osc.connect(gain);gain.connect(audio.destination);osc.start(when);osc.stop(when+duration+.02)}
+function victory(){try{audio??=new(window.AudioContext||window.webkitAudioContext)();audio.resume();const t=audio.currentTime+.05;const tune=[[523,0],[659,.15],[784,.3],[1047,.52],[784,.78],[1047,.95],[1175,1.13],[1319,1.35],[1568,1.6]];tune.forEach(([f,delay],i)=>playNote(f,t+delay,i===8?.8:.24,'triangle',.13));[0,.52,1.13,1.6].forEach(d=>{playNote(262,t+d,.4,'sine',.08);playNote(392,t+d,.4,'sine',.06)})}catch(e){}}
+function party(){victory();fireworks(17);for(let i=0;i<55;i++)setTimeout(vulva,i*65)}
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+async function launch(){if(started)return;started=true;document.querySelector('#start').disabled=true;try{audio??=new(window.AudioContext||window.webkitAudioContext)();await audio.resume()}catch(e){}document.querySelector('#intro').classList.add('hidden');const overlay=document.querySelector('#countdown');overlay.classList.remove('hidden');for(const n of ['3','2','1','BOOOOM !']){const span=overlay.querySelector('span');span.textContent=n;span.style.animation='none';void span.offsetWidth;span.style.animation='pop .5s ease-in-out';if(n!=='BOOOOM !')playNote(440, audio?.currentTime||0,.12);await wait(n==='BOOOOM !'?500:850)}overlay.classList.add('hidden');document.querySelector('#final').classList.remove('hidden');if(!reduced)party();else victory()}
+document.querySelector('#start').addEventListener('click',launch);document.querySelector('#again').addEventListener('click',party);document.addEventListener('pointerdown',e=>{if(started&&!e.target.closest('button')&&!reduced)burst(e.clientX,e.clientY,55)});if(!reduced)setInterval(()=>{if(started){vulva();if(Math.random()>.55)burst(innerWidth*Math.random(),innerHeight*.55*Math.random(),65)}},750);
 </script>
 </body>
 </html>
